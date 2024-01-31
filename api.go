@@ -43,13 +43,12 @@ func NewAPIServer(listenAddr string) *ApiServer {
 }
 func (s *ApiServer) Run() {
 	router := mux.NewRouter()
+	log.Println("API Server started and running on port", s.listenAddr)
 	router.HandleFunc("/task", makeHTTPHandlerfunc(s.handleTask))
 	http.ListenAndServe(s.listenAddr, router)
-	log.Println("API Server started and running on port", s.listenAddr)
 
 }
 func (s *ApiServer) handleTask(w http.ResponseWriter, r *http.Request) error {
-	fmt.Println("handleTask")
 	switch r.Method {
 	case http.MethodGet:
 		return s.handleGetTask(w, r)
@@ -64,18 +63,18 @@ func (s *ApiServer) handleTask(w http.ResponseWriter, r *http.Request) error {
 	}
 }
 func (s *ApiServer) handleGetTask(w http.ResponseWriter, r *http.Request) error {
-	fmt.Println("handleGetTask")
+	//log.Println("handleGetTask is running")
 	return nil
 }
 func (s *ApiServer) handleCreateTask(w http.ResponseWriter, r *http.Request) error {
-	fmt.Println("handleCreateTask")
+	//log.Println("handleCreateTask is running")
 	return nil
 }
 func (s *ApiServer) handleDeleteTask(w http.ResponseWriter, r *http.Request) error {
-	fmt.Println("handleDeleteTask")
+	//log.Println("handleDeleteTask is running")
 	return nil
 }
 func (s *ApiServer) handleUpdateTask(w http.ResponseWriter, r *http.Request) error {
-	fmt.Println("handleUpdateTask")
+	//log.Println("handleUpdateTask is running")
 	return nil
 }
