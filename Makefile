@@ -4,3 +4,4 @@ run: build
 	@./bin/todo-api
 test:
 	@go test -v ./...
+.PHONY: build run test

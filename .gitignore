@@ -1,2 +1,6 @@
-.gitignore
-./bin
+# Ignore .env file
+.env
+
+# Ignore bin directory
+bin/
+db/
