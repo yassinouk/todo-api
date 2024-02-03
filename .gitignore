@@ -4,3 +4,4 @@
 # Ignore bin directory
 bin/
 db/
+bin/todo-api
